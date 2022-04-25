@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
+
+java.sourceCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.0.0'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.0.0'
+    implementation group: 'io.rest-assured', name: 'json-schema-validator', version: '4.3.3'
+    implementation group: 'io.rest-assured', name: 'json-path', version: '4.3.3'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
+}
